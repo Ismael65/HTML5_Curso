@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Imagenes en Datos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #lienzo{
+                border: 1px solid #CC0000;
+            }
+            #section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+            
+        </style>
+        
+        <script>
+        function comenzar(){
+            var elemento=document.getElementById("lienzo");
+            lienzo=elemento.getContext("2d");
+            
+            var imagen=new Image();
+            imagen.src="imagenes/1.jpg";
+            imagen.addEventListener("load", manipularimagen, false);
+            
+            }    
+            
+            function manipularimagen(e) {
+                imagen=e.target;
+                lienzo.drawImage(imagen,0,0);
+                
+                var info_imagen=lienzo.getImageData(0,0,145,145);
+                var posicion;
+                
+                for(x=0;x<=145;x++){
+                    for(y=0;y<=145;y++){
+                        posicion=(info_imagen.width*4*y)+(x*4);
+                        info_imagen.data[posicion]=255-info_imagen.data[posicion];
+                        info_imagen.data[posicion+1]=255-info_imagen.data[posicion+1];
+                        info_imagen.data[posicion+2]=255-info_imagen.data[posicion+2];
+                        
+                    }
+                }
+                /*lienzo.putImageData(info_imagen,0,0);*/
+                lienzo.putImageData(info_imagen,300,250);
+                
+                
+            }
+            
+            window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        
+        
+        <section>
+            
+            
+            <canvas id="lienzo" width="1200" height="900">
+                
+                Este navegador no soporta elementos Canvas
+            </canvas>
+            
+        </section>
+        <div></div>
+    </body>
+</html>

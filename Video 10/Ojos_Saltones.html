@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ojos Saltones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #lienzo{
+                border: 1px solid #CC0000;
+            }
+            #section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+            
+        </style>
+        
+        <script>
+           var y=300;
+            var estado="bajando";
+            var arriba=y;
+            var horizontal=0;
+            
+        function comenzar(){
+            var elemento=document.getElementById("lienzo");
+            lienzo=elemento.getContext("2d");
+            
+            window.addEventListener("mousemove", animacion, false);
+            
+            }
+            
+            function animacion(e){
+                /*alert(e.clientX + " " + e.clientY);*/
+                lienzo.clearRect(0,0,300,225);
+                var xdelraton=e.clientX;
+                var ydelraton=e.clientY;
+                var xcentro=150;
+                var ycentro=112.5;
+                var angulo=Math.atan2(xdelraton-xcentro,ydelraton-ycentro);
+                var x=xcentro+Math.round(Math.sin(angulo)*10);
+                var y=ycentro+Math.round(Math.cos(angulo)*10);
+                
+                lienzo.beginPath();
+                lienzo.arc(xcentro,ycentro,20,0,Math.PI*2,false);
+                lienzo.moveTo(220,112.5);
+                lienzo.arc(200,ycentro,20,0,Math.PI*2,false);
+                lienzo.stroke();
+                
+        
+                
+                lienzo.beginPath();
+                lienzo.arc(x,y,10,0,Math.PI*2,false);
+                lienzo.moveTo(x,y);
+                lienzo.arc(x+50,y,10,0,Math.PI*2,false);
+                lienzo.fillStyle="#1120B5";
+                lienzo.fill();
+                
+         
+                
+                    
+            }
+            
+            window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        
+        
+        <section>
+            
+            
+            <canvas id="lienzo" width="300" height="225">
+                
+                Este navegador no soporta elementos Canvas
+            </canvas>
+            
+        </section>
+        <div></div>
+    </body>
+</html>

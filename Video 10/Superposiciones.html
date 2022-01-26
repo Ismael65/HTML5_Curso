@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Superposiciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #lienzo{
+                border: 1px solid #CC0000;
+            }
+            #section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+            
+        </style>
+        
+        <script>
+        function comenzar(){
+            var elemento=document.getElementById("lienzo");
+            lienzo=elemento.getContext("2d");
+            
+            lienzo.fillStyle="#880000";
+            lienzo.fillRect(400,250,300,100);
+            lienzo.globalCompositeOperation="source-in";
+            lienzo.fillStyle="#aaaaff";
+            lienzo.font="bold 80px verdana";
+            lienzo.textAlign="center";
+            lienzo.textBaseLine="middle";
+            lienzo.fillText("Hola Alumnos",550,330);
+            
+          
+            
+        }    
+            
+            window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        
+        <section>
+            <canvas id="lienzo" width="1200" height="900">
+                
+                Este navegador no soporta elementos Canvas
+            </canvas>
+            
+        </section>
+        
+        <div>
+        </div>
+    </body>
+</html>

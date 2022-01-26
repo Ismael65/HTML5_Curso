@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prueba Formularios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <section>
+            <form name="miformulario" id="miformulario" method="get" autocomplete="on">
+                Email:&nbsp;<input type="email" name="email" id="email" required="" multiple=""/><br><br>
+                Buscar:&nbsp;<input type="search" name="buscar" id="buscar"/><br><br>
+                URL:&nbsp;<input type="url" name="url" id="url" autofocus=""/><br><br>
+               Edad:&nbsp;<input type="number" name="edad" id="edad" min="0" max="100" step="5" placeholder="Multiplos de 5"/><br><br>
+               Codigo Postal:&nbsp;<input pattern="[0-9]{5}" name="codigopostal" id="codigopostal" placeholder="5 digitos"/><br><br>
+               <!--Edad:&nbsp<input type="range" name="edad" id="edad" min="5" max="105"/>-->
+               <!--Fecha:<input type="date" name="fecha" id="fecha"/>--> <!--aparece un calendario para escoger fecha-->
+               <!--Fecha:<input type="month" name="fecha" id="fecha"/>--> <!--el mes no hace nada-->
+               <!--Fecha:<input type="week" name="fecha" id="fecha"/>-->  <!-- para escoger semanas... no hace nada-->
+               <!--Fecha:<input type="time" name="fecha" id="fecha"/>-->   <!--para escoger horas-->
+               <!--Fecha:<input type="datetime" name="fecha" id="fecha"/> -->  <!--para escoger zana horario  no funciona-->
+                <input type="submit" value="Enviar"/><br><br>
+                
+
+            </form>
+        </section>
+        
+        <img src="imagenes/1.jpg">
+        <br><br>
+        Nombre:&nbsp;<input type="text" name="nombre" id="nombre" form="miformulario">
+
+        <div></div>
+    </body>
+</html>

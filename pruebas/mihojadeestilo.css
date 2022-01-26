@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/04/2021, 07:05:15 PM
+    Author     : ismael
+*/
+
+#cabeceraweb {background-color: blue;}
+
+#navegacion_principal {background-color: red;}
+
+#barra_lateral {background-color: green;
+float: left;
+height: 850px}
+
+#contenido_principal {background-color: purple;
+margin-left: 240px;
+padding-left: 15px;
+padding-top: 15px;}
+
+#pie_principal {background-color: yellow;
+clear: both;
+margin-top: 50px}
+
+li {background-color: yellow; 
+    display: inline;}
+
+
+
+

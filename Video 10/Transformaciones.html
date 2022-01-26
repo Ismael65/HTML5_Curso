@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Transformaciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #lienzo{
+                border: 1px solid #CC0000;
+            }
+            #section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+            
+        </style>
+        
+        <script>
+        function comenzar(){
+            var elemento=document.getElementById("lienzo");
+            lienzo=elemento.getContext("2d");
+            
+            /*lienzo.font="bold 20px verdana";
+            lienzo.fillText("Hola Alumnos", 50, 20);
+            lienzo.translate(100,100);
+            /*lienzo.scale(3,1);*/
+            /*lienzo.scale(3,3);
+            lienzo.rotate(Math.PI);
+            lienzo.fillText("Hola Alumnos", -200, -150);*/
+            
+            //desde aca otro video el (34)
+            
+            /*lienzo.transform(3,1,2,3,100,200);*/
+            /*lienzo.transform(3,0,0,1,0,0);
+            lienzo.font="bold 20px verdana";
+            lienzo.fillText("Hola alumnos",50,50);
+            lienzo,setTransform(1,0,0,10,0,0);
+            lienzo.font="bold 20px verdana";
+            lienzo.fillText("Hola alumnos",50,50);*/
+        
+            lienzo.font="bold, 20px, verdana";
+            lienzo.save();
+            lienzo.fillText("Hola Alumnos",50,50);
+            lienzo.translate(60,50);
+            lienzo.rotate(Math.PI/180*55);
+            lienzo.fillText("Hola Alumnos",0,0);
+            //lienzo.rotate(-Math.PI/180*55);
+            lienzo.restore();
+            lienzo.translate(300,400);
+            lienzo.scale(2,2);
+            lienzo.fillText("Hola Alumno",0,0);
+            
+        }    
+            
+            window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        
+        <section>
+            <canvas id="lienzo" width="1200" height="900">
+                
+                Este navegador no soporta elementos Canvas
+            </canvas>
+            
+        </section>
+        <div></div>
+    </body>
+</html>

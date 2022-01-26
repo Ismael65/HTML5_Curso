@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Trazados Curvos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #lienzo{
+                border: 1px solid #CC0000;
+            }
+            
+            
+        </style>
+        
+        <script>
+            
+    function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+            
+            lienzo.beginPath();
+            /*lienco.arc(250,100,50,0,Math.Pi,true);*/
+            lienzo.moveTo(250,50);
+            /*lienzo.cuadraticCurveTo(100,125,50,200);*/
+            lienzo.bezierCurveTo(200,125,300,125,250,200);
+            lienzo.stroke();
+            }
+            
+            
+          window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        <section>
+            <canvas id="lienzo" width="500" height="300" >
+                Este navegador no soporta el elemento Canvas
+                
+                
+            </canvas>
+            
+            
+        </section>
+        
+        
+        <div></div>
+    </body>
+</html>

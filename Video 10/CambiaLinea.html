@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Cambia Linea</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #lienzo{
+                border: 1px solid #CC0000;
+                
+            }
+            #section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+            
+        </style>
+        
+        <script>
+            
+        function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+                
+                lienzo.acr(200,150,100,0,Math.PI*2,false);
+                lienzo.stroke();
+                
+                lienzo.lineWidth=10;
+                lienzo.lineCap="round";
+                lienzo.beginPath();
+                lienzo.arc(200,170,60,0,Math.pi,false);
+                lienzo.stroke();
+                
+                lienzo.lineWidth=5;
+                lienzo.lineJoin=miter;
+                lienzo.beginPath();
+                lienzo.moveTo(195,135);
+                lienzo.lineTo(215,155);
+                lienzo.lineTo(195,155);
+                lienzo.stroke();
+                
+                lienzo.lineWidth=1;
+                lienzo.beginPath();
+                lienzo.arc(175,110,7,0,Math.PI*2,false);
+                lienzo.arc(225,110,7,0,Math.PI*2,false);
+                lienzo.fill();
+                
+                lienzo.beginPath();
+                lienzo.arc(160,206,15,0,Math.PI*2,false);
+                lienzo.stroke();
+                lienzo.beginPath();
+                lienzo.arc(232,206,15,0,Math.PI*2,false);
+                lienzo.stroke();
+            }
+            
+            window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        <section>
+            <canvas id="lienzo" width="800" height="600">
+                Este navegador no soporta el elemento Canvas
+                
+                
+            </canvas>
+            
+            
+        </section>
+        
+        <div></div>
+    </body>
+</html>

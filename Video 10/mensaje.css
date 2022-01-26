@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/05/2021, 02:03:30 PM
+    Author     : ismael
+*/
+
+#zonaformularios{
+    margin-left: 100px;
+    padding: 20px;
+    border: none;
+}
+#zonadatos{
+    float: left;
+    width: 500px;
+    margin: 20px 20px;
+    padding: 10px;
+    border: 2px dotted #F00;
+}
+#zonarecepcion{
+    width: 500px;
+    height: 350px;
+    margin: 20px 600px;
+    padding: 20px;
+    border: 2px dotted #160BF3;
+}
+

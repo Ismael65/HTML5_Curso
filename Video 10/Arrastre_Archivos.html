@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrastre Archivos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="DragDrop.css">
+        <script>
+            function comenzar(){
+               soltar=document.getElementById("zonadestino") ;
+               soltar.addEventListener("dragenter", function(e){
+                   e.preventDefault();}, false);
+               soltar.addEventListener("dragover", function(e){
+                   e.preventDefault();}, false);
+               soltar.addEventListener("drop", soltado, false);
+               
+            }
+            function soltado(e){
+                e.preventDefault();
+                var archivos=e.dataTransfer.files;
+                var listado="";
+                
+                for(var f=0;f<archivos.length;f++){
+                    //listado=archivos[f].name;
+                    //listado=(archivos[f].size/1024).toFixe(2);
+                    listado+="Archivo: " + archivos[f].name + "Peso: " + (archivos[f].size/1024).toFixe(2) + "tipo: " + archivos[f].type + "<br>";
+                }
+                soltar.innerHTML=listado;
+            }
+            
+            
+            window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        <section id="zonadestino">
+            Arrastre aca
+        </section>
+        
+        
+        
+    </body>
+</html>
+;

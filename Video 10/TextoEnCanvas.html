@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Texto En Canvas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #lienzo{
+                border: 1px solid #CC0000;
+            }
+            #section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+            
+        </style>
+        
+        <script>
+            
+        function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+                
+            lienzo.shadowColor="rgba(0,0,0,0.5)";
+            lienzo.shadowOffsetX=4;
+            lienzo.shadowOffsetY=4;
+            lienzo.shadowBlur=5;
+            lienzo.font="bold 48px verdana";
+            lienzo.textAlign="start";
+            /*lienzo.textAlign="end";*/
+            /*lienzo.textBaseline="bottom";*/
+            lienzo.textBaseline="top";
+            lienzo.fillText("Hola Alumnos", 100,100);
+            /*lienzo.moveTo(100,100);
+            lienzo.lineTo(200,100);
+            lienzo.stroke();*/
+            var dimensiones=lienzo.measureText("Hola Alumnos");
+            /*lienzo.strokeRect(100,100,dimensiones.width+10,58);*/
+        }
+            
+            window.addEventListener("load", comenzar, false);
+        </script>
+        
+    </head>
+    <body>
+        
+        <section>
+            <canvas id="lienzo" width="800" height="600">
+                
+                Este navegador no soporta el elemento Canvas
+            </canvas>
+            
+            
+        </section>
+        <div></div>
+    </body>
+</html>

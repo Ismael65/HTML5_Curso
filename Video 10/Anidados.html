@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Eventos Anidados</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            
+            function loseventos(){
+                var elemento1=document.getElementsByTagName("p")[0];
+                var elemento2=document.getElementsByTagName("img")[0];
+                
+                elemento1.addEventListener("click",aviso2,true);
+                elemento2.addEventListener("click",aviso1,false);
+                
+                
+                }
+            
+            function aviso1(){
+                alert("Hola soy la Imagen");
+            }
+            
+            function aviso2(){
+                alert("Soy el Parrafo");
+            }
+            
+            window.addEventListener("load",loseventos,false);
+            
+        </script>
+            
+        
+    </head>
+    <body>
+        
+        <p><img src="imagenes/1.jpg" ></p>
+        
+        <div></div>
+    </body>
+</html>
